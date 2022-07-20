@@ -1,8 +1,13 @@
 import React from 'react'
+import type { NextPage } from 'next'
+import SEO from '../../components/seo/SEO'
 
-const NewsPage = () => {
+const NewsPage : NextPage = () => {
   return (
-    <div>NewsPage</div>
+    <div>
+       <SEO title='News' />
+      NewsPage
+    </div>
   )
 }
 

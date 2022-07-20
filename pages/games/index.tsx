@@ -1,9 +1,12 @@
 import React from 'react'
+import type { NextPage } from 'next'
+import SEO from '../../components/seo/SEO'
 
-const GamesPage = () => {
+const GamesPage: NextPage = () => {
   return (
     <div>
-        List of Games
+      <SEO title='Games' />
+      List of Games
     </div>
   )
 }

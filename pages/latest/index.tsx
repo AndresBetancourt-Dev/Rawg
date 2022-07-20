@@ -1,8 +1,13 @@
+import type { NextPage } from 'next'
 import React from 'react'
+import SEO from '../../components/seo/SEO'
 
-const LatestPage = () => {
+const LatestPage: NextPage = () => {
   return (
-    <div>LatestPage</div>
+    <div>
+      <SEO title='Latest' />
+      LatestPage
+    </div>
   )
 }
 

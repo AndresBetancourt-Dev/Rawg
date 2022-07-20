@@ -1,8 +1,13 @@
 import React from 'react'
+import type { NextPage } from 'next'
+import SEO from '../components/seo/SEO'
 
-const NotFoundPage = () => {
+const NotFoundPage: NextPage = () => {
   return (
-    <div>Not found Page</div>
+    <div>
+      <SEO title='Not Found' />
+      Not found Page
+    </div>
   )
 }
 
