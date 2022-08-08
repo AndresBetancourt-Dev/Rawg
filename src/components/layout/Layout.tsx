@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Navbar from '../navbar/Navbar'
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
-        <main>
+        <main className='main'>
             <Navbar />
-            <div>{children}</div>
+            <Fragment>{children}</Fragment>
         </main>
     )
 }

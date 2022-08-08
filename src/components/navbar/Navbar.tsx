@@ -27,7 +27,7 @@ const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [open, closed] = Object.keys(sidebarVariants);
   return (
-    <motion.nav initial={false} animate={isOpen ? open : closed}>
+    <motion.nav className='navigation' initial={false} animate={isOpen ? open : closed}>
       <motion.div className='background' variants={sidebarVariants} />
       <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
       <Navigation />

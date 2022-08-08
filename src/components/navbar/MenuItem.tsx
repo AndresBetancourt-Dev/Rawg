@@ -2,6 +2,7 @@ import { motion, Variants } from "framer-motion";
 import React from "react";
 import { Ease, Transition } from "../../styles";
 
+
 const menuItemVariants: Variants = {
   open: {
     y: 0,
@@ -23,7 +24,7 @@ const menuItemVariants: Variants = {
 
 const MenuItem = () => {
   return (
-    <motion.li variants={menuItemVariants}>
+    <motion.li className="navigation__list-item" variants={menuItemVariants}>
       <span className="icon-placeholder"></span>
       <span className="text-placeholder"></span>
     </motion.li>
