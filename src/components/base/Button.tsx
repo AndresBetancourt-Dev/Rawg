@@ -1,8 +1,11 @@
 import React from 'react'
+import { Container } from './Button.styles'
 
 const Button = () => {
   return (
-    <div>Button</div>
+    <Container>
+      <a href="#" className="button">Hey there!</a>
+    </Container>
   )
 }
 

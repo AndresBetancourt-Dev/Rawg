@@ -1,8 +1,12 @@
 import styled from "styled-components/macro";
+import tw from "twin.macro";
 
 export const Container = styled.div`
   .button{
-    border : 2px solid black;
+    ${tw`bg-blue-600 w-7 h-7 text-white px-[25rem] py-5 flex-1 align-middle justify-center`}
   }  
+`;
 
+export const SecondButton = tw.div`
+  w-16 h-16 bg-indigo-700 text-white
 `;

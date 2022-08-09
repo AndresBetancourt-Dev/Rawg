@@ -25,6 +25,7 @@ const SEO: React.FC<SEOProps> = ({
         <Head>
             <title key="title">{`${title && `${title} - `}${siteName}`}</title>
             <meta name="description" content={description} />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta key="og_type" property="og:type" content={ogType} />
             <meta key="og_title" property="og:title" content={title} />
             <meta key="og_description" property="og:description" content={description} />
