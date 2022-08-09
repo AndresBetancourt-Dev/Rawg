@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import { Ease, Transition } from "../../styles";
-
+import { Circle, Li, Text } from "./MenuItem.styles";
 
 const menuItemVariants: Variants = {
   open: {
@@ -22,12 +22,21 @@ const menuItemVariants: Variants = {
   },
 };
 
-const MenuItem = () => {
+interface MenuItemProps { 
+  icon?: React.ElementType,
+  text?: string,
+};
+
+const MenuItem: React.FC<MenuItemProps> = ({ icon: Icon, text }) => {
   return (
-    <motion.li className="navigation__list-item" variants={menuItemVariants}>
-      <span className="icon-placeholder"></span>
-      <span className="text-placeholder"></span>
-    </motion.li>
+    <Li className="navigation__list-item" variants={menuItemVariants}>
+      <Circle className="navigation__list-item-circle">
+        {Icon && <Icon />}
+      </Circle>
+      <Text className="navigation__list-item-text">
+        {text}
+      </Text>
+    </Li>
   );
 };
 

@@ -7,6 +7,11 @@ module.exports = {
   ],
   darkMode: true,
   theme: {
+    colors: {
+      white: "#FFFFFF",
+      dark: "#212121",
+      grey: "#313131"
+    },
     extend: {},
   },
   plugins: [],

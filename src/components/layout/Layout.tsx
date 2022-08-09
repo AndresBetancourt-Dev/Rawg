@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import Navbar from '../navbar/Navbar'
+import Navigation from '../navbar/Navigation'
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <main className='main'>
-            <Navbar />
+            <Navigation />
             <Fragment>{children}</Fragment>
         </main>
     )

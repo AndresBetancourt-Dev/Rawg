@@ -2,20 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Colors } from "../../styles/Colors";
 import { Transition } from "../../styles/Transition";
+import { Burger, Toggler } from "./MenuToggler.styles";
 
 interface Bar {
     openPath: string;
     closedPath: string;
-}
+};
 
 interface PathProps extends Bar {
     stroke?: string;
-}
+};
 
 interface MenuTogglerProps {
     toggle: () => void;
     stroke?: string;
-}
+};
 
 const Path: React.FC<PathProps> = ({
     openPath,
@@ -55,13 +56,13 @@ export const Bars = [
 
 const MenuToggler: React.FC<MenuTogglerProps> = ({ toggle, stroke }) => {
     return (
-        <button onClick={toggle}>
-            <svg width="20" height="20" viewBox="0 0 20 20">
+        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle}>
+            <Burger className="navigation__burger-icon">
                 {Bars.map(({ openPath, closedPath }: Bar, index) => (
                     <Path openPath={openPath} closedPath={closedPath} key={index} stroke={stroke} />
                 ))}
-            </svg>
-        </button>
+            </Burger>
+        </Toggler>
     );
 };
 

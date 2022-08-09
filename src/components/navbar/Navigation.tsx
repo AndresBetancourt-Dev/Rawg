@@ -1,29 +1,39 @@
-import { motion, Variants } from "framer-motion";
+import { useCycle, Variants } from "framer-motion";
 import React from "react";
-import MenuItem from "./MenuItem";
+import { Transition } from "../../styles";
+import { Colors } from "../../styles/Colors";
+import MenuToggler from "./MenuToggler";
+import { Background, Nav } from "./Navigation.styles";
+import NavigationList from "./NavigationList";
 
-const navigationVariants: Variants = {
-  open: {
+const sidebarVariants: Variants = {
+  open:
+  {
+    clipPath: `circle(1000px at 82.5% 40px)`,
     transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.2,
+      duration: Transition.SHORT
     },
   },
   closed: {
+    clipPath: `circle(30px at 82.5% 40px)`,
     transition: {
-      staggerChildren: 0.05,
-      delayChildren: -1,
+      duration: Transition.SHORT,
+      delay: Transition.SHORT
     },
-  },
+  }
 };
 
 const Navigation = () => {
+
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [open, closed] = Object.keys(sidebarVariants);
+
   return (
-    <motion.ul variants={navigationVariants}>
-      {[...Array(5)].map((_, index) => (
-        <MenuItem key={index} />
-      ))}
-    </motion.ul>
+    <Nav className="navigation" initial={false} animate={isOpen ? open : closed}>
+      <Background className="navigation__background" variants={sidebarVariants} />
+      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
+      <NavigationList />
+    </Nav>
   );
 };
 
