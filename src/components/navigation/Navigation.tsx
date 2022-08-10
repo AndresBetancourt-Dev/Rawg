@@ -1,5 +1,6 @@
 import { useCycle, Variants } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
+import NavigationContext from "../../contexts/NavigationContext";
 import { Transition } from "../../styles";
 import { Colors } from "../../styles/Colors";
 import MenuToggler from "./MenuToggler";
@@ -27,12 +28,13 @@ const Navigation = () => {
 
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [open, closed] = Object.keys(sidebarVariants);
+  const pages = useContext(NavigationContext);
 
   return (
     <Nav className="navigation" initial={false} animate={isOpen ? open : closed}>
       <Background className="navigation__background" variants={sidebarVariants} />
       <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
-      <NavigationList />
+      <NavigationList pages={pages} />
     </Nav>
   );
 };

@@ -5,8 +5,25 @@
 @tailwind utilities;
 
 @layer base {
+
+  @font-face {
+    font-family: 'Averta';
+    src: url('/fonts/Averta.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Mont';
+    src: url('/fonts/Mont.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
   body {
-    @apply h-screen bg-gradient-to-br from-[#212121] to-[black] overflow-hidden;
+    @apply h-screen bg-gradient-to-br from-[#212121] to-[black] overflow-hidden font-main;
   }
 }
 

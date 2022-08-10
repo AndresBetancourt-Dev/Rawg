@@ -1,6 +1,7 @@
 import { Variants } from "framer-motion";
 import React from "react";
 import { ZIndex } from "../../styles";
+import { Page } from "../../types/navigation";
 import MenuItem from "./MenuItem";
 import { MenuList } from "./NavigationList.styles";
 
@@ -22,17 +23,15 @@ const navigationVariants: Variants = {
 };
 
 export interface MenuListProps {
-  items: Object[]
+  pages: Object[]
 }
 
-const NavigationList = () => {
-
-  const items = [...Array(7)];
+const NavigationList = ({pages = [...Array(6)]}) => {
 
   return (
-    <MenuList variants={navigationVariants} items={items} >
-      {items.map((_, index) => (
-        <MenuItem key={index} />
+    <MenuList variants={navigationVariants} pages={pages} >
+      {pages.map((page: Page) => (
+        <MenuItem key={page.name} {...page} />
       ))}
     </MenuList>
   );

@@ -11,7 +11,7 @@ export interface SEOProps {
     canonical?: string,
     ogImage?: string,
     ogType?: string
-}
+};
 
 const SEO: React.FC<SEOProps> = ({
     title = "",
@@ -53,6 +53,6 @@ const SEO: React.FC<SEOProps> = ({
             <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
     );
-}
+};
 
 export default SEO;

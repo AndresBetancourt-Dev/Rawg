@@ -12,6 +12,10 @@ module.exports = {
       dark: "#212121",
       grey: "#313131"
     },
+    fontFamily: {
+      main: 'Averta, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif',
+      title: 'Mont, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif'
+    },
     extend: {},
   },
   plugins: [],
