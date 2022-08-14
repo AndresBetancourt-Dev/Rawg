@@ -56,7 +56,7 @@ export const Bars = [
 
 const MenuToggler: React.FC<MenuTogglerProps> = ({ toggle, stroke }) => {
     return (
-        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle}>
+        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle} aria-label="Menu Toggler">
             <Burger className="navigation__burger-icon">
                 {Bars.map(({ openPath, closedPath }: Bar, index) => (
                     <Path openPath={openPath} closedPath={closedPath} key={index} stroke={stroke} />

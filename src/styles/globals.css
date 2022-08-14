@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    z-index: 1;
+  }
 
   @font-face {
     font-family: 'Averta';
@@ -23,7 +26,7 @@
   }
 
   body {
-    @apply h-screen bg-gradient-to-br from-[#212121] to-[black] overflow-hidden font-main;
+    @apply h-screen bg-gradient-to-br from-[#212121] to-[black] font-main;
   }
 }
 

@@ -23,10 +23,10 @@ const navigationVariants: Variants = {
 };
 
 export interface MenuListProps {
-  pages: Object[]
+  pages: Page[]
 }
 
-const NavigationList = ({pages = [...Array(6)]}) => {
+const NavigationList: React.FC<MenuListProps> = ({pages = []}) => {
 
   return (
     <MenuList variants={navigationVariants} pages={pages} >

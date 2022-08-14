@@ -28,13 +28,14 @@ const Navigation = () => {
 
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [open, closed] = Object.keys(sidebarVariants);
-  const pages = useContext(NavigationContext);
+  const { pages } = useContext(NavigationContext);
 
   return (
     <Nav className="navigation" initial={false} animate={isOpen ? open : closed}>
-      <Background className="navigation__background" variants={sidebarVariants} />
+      <Background className="navigation__background" variants={sidebarVariants} >
+        <NavigationList pages={pages} />
+      </Background>
       <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
-      <NavigationList pages={pages} />
     </Nav>
   );
 };
