@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Colors } from "../../styles/Colors";
 import { Transition } from "../../styles/Transition";
 import { Burger, Toggler } from "./MenuToggler.styles";
+import AllowKeyboardNavigation from "../accessibility/AllowKeyboardNavigation";
 
 interface Bar {
     openPath: string;
@@ -56,12 +57,14 @@ export const Bars = [
 
 const MenuToggler: React.FC<MenuTogglerProps> = ({ toggle, stroke }) => {
     return (
-        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle} aria-label="Menu Toggler">
-            <Burger className="navigation__burger-icon">
-                {Bars.map(({ openPath, closedPath }: Bar, index) => (
-                    <Path openPath={openPath} closedPath={closedPath} key={index} stroke={stroke} />
-                ))}
-            </Burger>
+        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle}>
+            <AllowKeyboardNavigation aria-label="Menu Toggler">
+                <Burger className="navigation__burger-icon">
+                    {Bars.map(({ openPath, closedPath }: Bar, index) => (
+                        <Path openPath={openPath} closedPath={closedPath} key={index} stroke={stroke} />
+                    ))}
+                </Burger>
+            </AllowKeyboardNavigation>
         </Toggler>
     );
 };

@@ -23,7 +23,7 @@ const navigationVariants: Variants = {
 };
 
 export interface MenuListProps {
-  pages: Page[]
+  pages: Page[];
 }
 
 const NavigationList: React.FC<MenuListProps> = ({pages = []}) => {

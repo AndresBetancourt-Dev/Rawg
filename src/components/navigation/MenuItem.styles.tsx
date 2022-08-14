@@ -1,7 +1,8 @@
 import styled from "styled-components/macro";
 import tw from "twin.macro";
+import DeactivatableLink from "../accessibility/DeactivatableLink";
 
-export const Content = styled.a`
+export const Content = styled(DeactivatableLink)`
   ${tw`flex items-center mb-5 space-x-6 cursor-pointer`}
 `;
 

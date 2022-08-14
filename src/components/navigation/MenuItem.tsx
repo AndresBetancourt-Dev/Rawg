@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+import NavigationContext from "../../contexts/NavigationContext";
 import { Ease, Transition } from "../../styles";
 import { Circle, Content, Text } from "./MenuItem.styles";
 
@@ -24,16 +25,19 @@ const menuItemVariants: Variants = {
 };
 
 interface MenuItemProps {
-  icon?: React.ElementType,
-  name: string,
-  url: string,
+  icon?: React.ElementType;
+  name: string;
+  url: string;
 };
 
 const MenuItem: React.FC<MenuItemProps> = ({ icon: Icon, name, url }) => {
+
+  const { isOpen } = useContext(NavigationContext);
+
   return (
     <motion.li className="navigation__list-item" variants={menuItemVariants} >
       <Link href={url}>
-        <Content className="navigation__list-item-link">
+        <Content className="navigation__list-item-link" href={url} enabled={isOpen}>
           <Circle className="navigation__list-item-circle">
             {Icon && <Icon width={25} height={25} color={"white"} />}
           </Circle>

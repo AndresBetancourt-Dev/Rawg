@@ -26,9 +26,8 @@ const sidebarVariants: Variants = {
 
 const Navigation = () => {
 
-  const [isOpen, toggleOpen] = useCycle(false, true);
   const [open, closed] = Object.keys(sidebarVariants);
-  const { pages } = useContext(NavigationContext);
+  const { isOpen, toggleOpen, pages } = useContext(NavigationContext);
 
   return (
     <Nav className="navigation" initial={false} animate={isOpen ? open : closed}>
