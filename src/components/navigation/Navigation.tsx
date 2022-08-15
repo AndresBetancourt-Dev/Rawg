@@ -31,10 +31,10 @@ const Navigation = () => {
 
   return (
     <Nav className="navigation" initial={false} animate={isOpen ? open : closed}>
+      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
       <Background className="navigation__background" variants={sidebarVariants} >
         <NavigationList pages={pages} />
       </Background>
-      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
     </Nav>
   );
 };
