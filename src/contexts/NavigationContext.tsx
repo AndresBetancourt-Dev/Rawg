@@ -8,7 +8,7 @@ interface NavigationContextValues {
     pages: Page[];
     isOpen: boolean;
     toggleOpen: Cycle;
-}
+};
 
 const NavigationContext = createContext<NavigationContextValues>({
     pages: ([] as Page[]),

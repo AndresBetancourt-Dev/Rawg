@@ -1,4 +1,4 @@
-import { useCycle, Variants } from "framer-motion";
+import { Variants } from "framer-motion";
 import React, { useContext } from "react";
 import NavigationContext from "../../contexts/NavigationContext";
 import { Transition } from "../../styles";
@@ -10,16 +10,15 @@ import NavigationList from "./NavigationList";
 const sidebarVariants: Variants = {
   open:
   {
-    clipPath: `circle(1000px at 82.5% 40px)`,
+    clipPath: `circle(2000px at 82.5% 40px)`,
     transition: {
-      duration: Transition.SHORT
+      duration: Transition.MEDIUM
     },
   },
   closed: {
     clipPath: `circle(30px at 82.5% 40px)`,
     transition: {
-      duration: Transition.SHORT,
-      delay: Transition.SHORT
+      duration: Transition.MEDIUM,
     },
   }
 };

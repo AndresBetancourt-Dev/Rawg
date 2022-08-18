@@ -41,4 +41,4 @@ export default class NextDocument extends Document {
       </Html>
     );
   }
-}
+};

@@ -26,7 +26,11 @@
   }
 
   body {
-    @apply h-screen bg-gradient-to-br from-[#212121] to-[black] font-main;
+    @apply h-screen bg-gradient-to-br from-[#212121] to-[black] font-main text-white;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    @apply font-title;
   }
 }
 

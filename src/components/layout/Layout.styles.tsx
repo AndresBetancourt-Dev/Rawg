@@ -7,13 +7,13 @@ interface MainProps {
     background: string;
 };
 
-export const Main = styled(motion.main)<MainProps>`
+export const Main = styled(motion.main) <MainProps>`
     ${tw`w-full h-auto`}
     position: relative;
 
     &::before, &::after {
         ${tw`absolute w-full h-full`}
-        content: '';
+        content: "";
         z-index: ${ZIndex.HIDDEN};
     }
 
