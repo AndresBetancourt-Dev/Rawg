@@ -17,14 +17,20 @@ export const Main = styled(motion.main) <MainProps>`
         z-index: ${ZIndex.HIDDEN};
     }
 
-    &:before{
-        background-image: ${props => `url(${props.background})`};
+    &::after {
+        top: 0;
+    }
+
+    ${(props) => props.background ? 
+    `&:before{
+        background-image: url(${props.background});
         background-size: 100% auto, cover;
+        max-height: 100vh;
         background-repeat: no-repeat;
     }
 
     &:after{
         top: 0;
         background: linear-gradient(to top, ${Colors.DARK}, rgba(0,0,0,.90));
-    }
+    }`: ""}
 `;

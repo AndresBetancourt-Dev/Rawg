@@ -6,7 +6,8 @@ const LatestPage: NextPage = () => {
   return (
     <div>
       <SEO title='Latest' />
-      LatestPage
+      <div style={{width : "100%", height: "100vh"}} > LatestPage</div>
+      <div style={{width : "100%", height: "100vh"}} > LatestPage</div>
     </div>
   )
 }

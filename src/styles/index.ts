@@ -3,3 +3,4 @@ export { Ease } from "./Ease";
 export { Screen } from "./Screen";
 export { Transition } from "./Transition";
 export { ZIndex } from "./ZIndex";
+export * as Common from "./Common.styles";
