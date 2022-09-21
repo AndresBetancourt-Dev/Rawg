@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components/macro";
 import tw from "twin.macro";
-import { Screen } from "../../styles";
+import { Screen } from "styles";
 import { HeroStyles } from "./Hero.styles";
 
 

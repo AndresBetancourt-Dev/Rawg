@@ -5,4 +5,7 @@ module.exports = {
     config.resolve.fallback = { fs: false, module: false, path : false }
     return config
   },
+  images: {
+    domains: ["media.rawg.io"]
+  }
 }

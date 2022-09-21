@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from "react";
-import LayoutContext from "../../contexts/LayoutContext";
+import LayoutContext from "contexts/LayoutContext";
 import Navigation from "../navigation/Navigation";
 import { Main } from "./Layout.styles";
 

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components/macro";
 import tw from "twin.macro";
-import { Colors, ZIndex } from "../../styles";
+import { Colors, ZIndex } from "styles";
 
 interface MainProps {
     background: string;

@@ -1,6 +1,5 @@
 import styled from "styled-components/macro";
-import tw from "twin.macro";
-import { Game } from "../../types/games/Game";
+import { Game } from "types/games/Game";
 
 export const Container = styled.article<Partial<Game>>`
     min-height: 200px;
