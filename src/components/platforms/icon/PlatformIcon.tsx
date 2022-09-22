@@ -1,7 +1,30 @@
 import React, { Fragment } from "react";
 import { IconType } from "react-icons";
-import { RiComputerLine, RiGamepadFill, RiGamepadLine, RiMacFill } from "react-icons/ri";
-import { SiPlaystation4, SiPlaystation5, SiXbox, SiNintendoswitch, SiNintendo3Ds, SiMacos, SiPlaystation3, SiPlaystation2, SiPlaystation, SiPlaystationvita, SiWii, SiWiiu, SiNintendogamecube, SiNintendo, SiApple, SiAtari, SiSega } from "react-icons/si";
+import {
+  RiComputerLine,
+  RiGamepadFill,
+  RiGamepadLine,
+  RiMacFill,
+} from "react-icons/ri";
+import {
+  SiPlaystation4,
+  SiPlaystation5,
+  SiXbox,
+  SiNintendoswitch,
+  SiNintendo3Ds,
+  SiMacos,
+  SiPlaystation3,
+  SiPlaystation2,
+  SiPlaystation,
+  SiPlaystationvita,
+  SiWii,
+  SiWiiu,
+  SiNintendogamecube,
+  SiNintendo,
+  SiApple,
+  SiAtari,
+  SiSega,
+} from "react-icons/si";
 import { AiFillAndroid } from "react-icons/ai";
 import { FaXbox, FaApple, FaPlaystation, FaGamepad } from "react-icons/fa";
 import { IoLogoGameControllerA, IoLogoXbox } from "react-icons/io";
@@ -63,16 +86,17 @@ const platforms: Map<string, IconType> = new Map([
 ]);
 
 interface PlatformIconProps {
-    name: Platform["name"];
-    image_background: Platform["image_background"];
+  name: Platform["name"];
+  slug: Platform["slug"];
 }
 
-const PlatformIcon = ({ name, image_background }: PlatformIconProps) => {
-  const Icon: IconType | undefined = platforms.get(image_background);
-
-  console.log(Icon);
-
-  return <Fragment>{Icon && <Icon className={image_background} title={name} aria-label={name} />}</Fragment>;
+const PlatformIcon = ({ name, slug }: PlatformIconProps) => {
+  const Icon: IconType | undefined = platforms.get(slug);
+  return (
+    <Fragment>
+      {Icon && <Icon className={slug} title={name} aria-label={name} />}
+    </Fragment>
+  );
 };
 
 export default PlatformIcon;

@@ -8,12 +8,14 @@ interface NavigationContextValues {
     pages: Page[];
     isOpen: boolean;
     toggleOpen: Cycle;
+    exit: () => void
 };
 
 const NavigationContext = createContext<NavigationContextValues>({
     pages: ([] as Page[]),
     isOpen: false,
     toggleOpen: () => {},
+    exit: () => {}
 });
 
 export const NavigationProvider: React.FC<PropsWithChildren<{}>> = ({children}) => {
@@ -42,10 +44,17 @@ export const NavigationProvider: React.FC<PropsWithChildren<{}>> = ({children}) 
         },
     ];
 
+    const exit = () => {
+        if(isOpen){
+            toggleOpen();
+        }    
+    }
+
     const value = {
         pages,
         isOpen,
-        toggleOpen
+        toggleOpen,
+        exit
     };
 
     return (

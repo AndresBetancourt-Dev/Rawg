@@ -26,12 +26,12 @@ const sidebarVariants: Variants = {
 const Navigation = () => {
 
   const [open, closed] = Object.keys(sidebarVariants);
-  const { isOpen, toggleOpen, pages } = useContext(NavigationContext);
+  const { isOpen, toggleOpen, exit, pages } = useContext(NavigationContext);
 
   return (
-    <Nav className="navigation" initial={false} animate={isOpen ? open : closed}>
-      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} />
-      <Background className="navigation__background" variants={sidebarVariants} >
+    <Nav className="navigation" initial={false} animate={isOpen ? open : closed} onMouseLeave={() => exit()}>
+      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE}/>
+      <Background className="navigation__background" variants={sidebarVariants}>
         <NavigationList pages={pages} />
       </Background>
     </Nav>

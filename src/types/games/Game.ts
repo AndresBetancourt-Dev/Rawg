@@ -32,7 +32,7 @@ export interface Game{
     rating_top: number;
     ratings: Rating[];
     ratings_count: number;
-    released: string | Date;
+    released: string;
     reviews_count: number;
     reviews_text_count: number;
     saturated_color: string;
