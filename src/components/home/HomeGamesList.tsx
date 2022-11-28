@@ -18,11 +18,11 @@ export const Section = styled.section`
     }
 `;
 
-export const KratosContainer = styled.div`
-    ${tw`hidden flex-wrap w-1/4 relative lg:flex h-auto`}
+export const PowerfulCharactersContainer = styled.div`
+    ${tw`hidden flex-wrap w-[30%] relative lg:flex h-auto`}
 `;
 
-export const Kratos = styled(Image)`
+export const PowerfulCharacters = styled(Image)`
 `;
 
 interface HomeGameListProps {
@@ -32,9 +32,9 @@ interface HomeGameListProps {
 const HomeGameList: React.FC<HomeGameListProps> = ({games}) => {
   return (
     <Section className="home__gameslist">
-      <KratosContainer>
-        <Kratos src={"/images/powerful-characters.png"} width={450} height={1000} objectFit={"cover"} alt={"Kratos Image"}/>
-      </KratosContainer>
+      <PowerfulCharactersContainer>
+        <PowerfulCharacters src={"/images/powerful-characters.png"} width={500} height={1000} objectFit={"cover"} alt={"Powerful Characters Image"}/>
+      </PowerfulCharactersContainer>
       <div className="flex flex-wrap w-4/5">
         <h2 className="home__gameslist-title">Best Games</h2>
         <div className="flex flex-wrap w-full gap-5">

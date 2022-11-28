@@ -9,6 +9,8 @@ import {
   GameCardHighlights,
   GameCardInformation,
   GameCardTitle,
+  GameCardDate,
+  GameCardMeta
 } from "./GameCard.styles";
 import GameCardRating from "./GameCardRating";
 import GamePlatforms from "./GamePlatforms";
@@ -18,6 +20,7 @@ interface GameCardProps {
 }
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
+
   return (
     <Container
       background_image={game.background_image}
@@ -28,14 +31,18 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
         <GamePlatforms platforms={game.platforms} />
         <GameCardInformation>
           <GameCardRating rating={game.rating} />
+          <GameCardMeta>
           <MetacriticRating metacritic={game.metacritic} />
+          <GameCardDate>
           <IoCalendarSharp/>
           <time>
             {game.released.split('-').join(' | ')}
           </time>
+          </GameCardDate>
+          </GameCardMeta>
+          
         </GameCardInformation>
         <GameCardHighlights>
-          <Image src={game.short_screenshots[1].image ?? ""} title={game.name+"Screenshot"+"1"} alt={game.name+"Screenshot"+"1"} width={100} height={60}/>
         </GameCardHighlights>
       </GameCardContent>
     </Container>

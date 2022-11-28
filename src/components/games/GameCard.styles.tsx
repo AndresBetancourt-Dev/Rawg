@@ -36,7 +36,7 @@ export const Container = styled.article<Partial<Game>>`
     margin-left: 1em;
   }
 
-  ${tw`md:w-[40%] w-full xl:w-[30%]`}
+  ${tw`md:w-[47.5%] w-full xl:w-[30%]`}
 `;
 
 export const GameCardTitle = styled.h3`
@@ -49,6 +49,7 @@ export const GameCardContent = styled.div`
 `;
 
 export const GameCardInformation = styled.div`
+  ${tw``}
 `;
 
 export const GameCardHighlights = styled.div`
@@ -65,4 +66,11 @@ export const GameCardRatingContainer = styled.div`
   & p {
     ${tw`pt-1 text-xl mr-2`}
   }
+`;
+
+export const GameCardDate = styled.div`
+  ${tw`flex items-center space-x-2`}
+`
+export const GameCardMeta = styled.div`
+${tw`flex flex-col items-center space-y-2 lg:flex-row lg:justify-evenly lg:space-x-2`}
 `;
