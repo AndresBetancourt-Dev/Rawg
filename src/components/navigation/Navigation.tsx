@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <Nav className="navigation" initial={false} animate={isOpen ? open : closed} onMouseLeave={() => exit()}>
-      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE}/>
+      <MenuToggler toggle={() => toggleOpen()} stroke={Colors.WHITE} isOpen={isOpen}/>
       <Background className="navigation__background" variants={sidebarVariants}>
         <NavigationList pages={pages} />
       </Background>

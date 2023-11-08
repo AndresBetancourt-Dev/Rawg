@@ -15,6 +15,7 @@ interface PathProps extends Bar {
 };
 
 interface MenuTogglerProps {
+    isOpen: boolean;
     toggle: () => void;
     stroke?: string;
 };
@@ -55,9 +56,9 @@ export const Bars = [
     },
 ];
 
-const MenuToggler: React.FC<MenuTogglerProps> = ({ toggle, stroke }) => {
+const MenuToggler: React.FC<MenuTogglerProps> = ({ toggle, stroke, isOpen }) => {
     return (
-        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle}>
+        <Toggler className="navigation__menu-toggler menu-toggler" onClick={toggle} aria-expanded={isOpen}>
             <AllowKeyboardNavigation aria-label="Menu Toggler">
                 <Burger className="navigation__burger-icon">
                     {Bars.map(({ openPath, closedPath }: Bar, index) => (

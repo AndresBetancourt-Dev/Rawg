@@ -9,5 +9,6 @@ export const Nav = styled(motion.nav)`
 `;
 
 export const Background = styled(motion.div)`
-    ${tw`bg-dark top-0 right-0 bottom-0 w-[inherit] flex justify-center items-center`}
+    ${tw`top-0 right-0 bottom-0 w-[inherit] flex justify-center items-center`}
+    background: linear-gradient(45deg, black, #111111);
 `;

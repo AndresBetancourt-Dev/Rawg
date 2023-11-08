@@ -12,7 +12,7 @@ interface GamePlatformsProps {
 }
 
 const Container = styled.section`
-  ${tw`flex col-span-2 gap-2 items-center bg-dark p-2`}
+  ${tw`flex col-span-2 gap-2 items-center bg-dark p-2 h-10`}
 `;
 
 const SecondaryPlatforms = styled.span`

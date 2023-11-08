@@ -3,9 +3,8 @@ import { Colors } from "styles";
 import tw from "twin.macro";
 import { Game } from "types/games/Game";
 
-export const Container = styled.article<Partial<Game>>`
+export const Container = styled.a<Partial<Game>>`
   min-height: 400px;
-  background: #6600ff;
   border-radius: 1rem;
   background-image: url(${(props) => props.background_image});
   background-size: cover;
@@ -45,7 +44,7 @@ export const GameCardTitle = styled.h3`
 `;
 
 export const GameCardContent = styled.div`
-  ${tw`w-full absolute h-1/2 bottom-0 bg-darker grid grid-cols-2 opacity-95`}
+  ${tw`w-full absolute bottom-0 bg-darker grid grid-cols-2 opacity-95 h-auto`}
 `;
 
 export const GameCardInformation = styled.div`
@@ -70,7 +69,11 @@ export const GameCardRatingContainer = styled.div`
 
 export const GameCardDate = styled.div`
   ${tw`flex items-center space-x-2`}
+
+  & time{
+    ${tw`text-xs`}
+  }
 `
 export const GameCardMeta = styled.div`
-${tw`flex flex-col items-center space-y-2 lg:flex-row lg:justify-evenly lg:space-x-2`}
+${tw`flex flex-col items-center gap-1 py-2 lg:flex-row lg:justify-center lg:gap-2`}
 `;
