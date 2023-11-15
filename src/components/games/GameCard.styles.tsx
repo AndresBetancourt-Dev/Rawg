@@ -35,7 +35,7 @@ export const Container = styled.a<Partial<Game>>`
     margin-left: 1em;
   }
 
-  ${tw`md:w-[47.5%] w-full xl:w-[30%]`}
+  ${tw`md:w-[47.5%] w-full lg:w-[30%] xl:w-[22.5%]`}
 `;
 
 export const GameCardTitle = styled.h3`
@@ -44,11 +44,12 @@ export const GameCardTitle = styled.h3`
 `;
 
 export const GameCardContent = styled.div`
-  ${tw`w-full absolute bottom-0 bg-darker grid grid-cols-2 opacity-95 h-auto`}
+  ${tw`w-full absolute bottom-0 bg-darker grid opacity-95 h-auto`}
 `;
 
 export const GameCardInformation = styled.div`
-  ${tw``}
+  ${tw`w-full grid items-center justify-items-center`}
+  grid-template-columns: 1.5fr repeat(2,1fr);
 `;
 
 export const GameCardHighlights = styled.div`
@@ -59,7 +60,7 @@ export const GameCardRatingContainer = styled.div`
   ${tw`flex p-2 items-center font-title text-yellow-400`}
 
   & svg {
-    ${tw`mx-0.5 w-4`}
+    ${tw`mx-0.5 w-2 h-2 sm:w-3 sm:h-3`}
   }
 
   & p {
@@ -68,12 +69,9 @@ export const GameCardRatingContainer = styled.div`
 `;
 
 export const GameCardDate = styled.div`
-  ${tw`flex items-center space-x-2`}
+  ${tw`flex w-auto`}
 
   & time{
-    ${tw`text-xs`}
+    ${tw`text-xs text-center font-bold`}
   }
 `
-export const GameCardMeta = styled.div`
-${tw`flex flex-col items-center gap-1 py-2 lg:flex-row lg:justify-center lg:gap-2`}
-`;

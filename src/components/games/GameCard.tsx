@@ -1,8 +1,6 @@
 import MetacriticRating from "components/others/MetacriticRating";
-import Image from "next/image";
 import React from "react";
 import { Game } from "types/games/Game";
-import { IoCalendarSharp } from "react-icons/io5";
 import {
   Container,
   GameCardContent,
@@ -10,7 +8,6 @@ import {
   GameCardInformation,
   GameCardTitle,
   GameCardDate,
-  GameCardMeta
 } from "./GameCard.styles";
 import GameCardRating from "./GameCardRating";
 import GamePlatforms from "./GamePlatforms";
@@ -32,15 +29,12 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
         <GamePlatforms platforms={game.platforms} />
         <GameCardInformation>
           <GameCardRating rating={game.rating} />
-          <GameCardMeta>
-          <MetacriticRating metacritic={game.metacritic} />
           <GameCardDate>
-          <IoCalendarSharp/>
           <time>
-            {game.released.split('-').join(' | ')}
+            {game.released?.split('-').shift()}
           </time>
           </GameCardDate>
-          </GameCardMeta>
+          <MetacriticRating metacritic={game.metacritic} />
         </GameCardInformation>
         <GameCardHighlights>
         </GameCardHighlights>

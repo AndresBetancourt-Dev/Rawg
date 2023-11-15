@@ -14,7 +14,8 @@ enum MetacriticColors {
 }
 
 const MetacriticContainer = styled.div<{ score: MetacriticColors }>`
-  ${tw`px-2 py-1 font-bold font-sans w-max rounded-full`}
+  ${tw`px-1 py-1 font-bold font-sans w-min rounded-full text-xs`}
+  height: min-content;
   margin: 0;
   background-color: ${({ score }) => score};
 `;
