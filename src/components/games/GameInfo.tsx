@@ -11,7 +11,8 @@ const Container = styled.div`
   ${tw`w-full h-[100vh] flex flex-col items-center py-6`}
 
   & h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    ${tw`text-center pt-20`}
+    font-size: clamp(2rem, 5vw, 4.5rem);
   }
 
   & .game__description{
@@ -19,7 +20,7 @@ const Container = styled.div`
   }
 
   p {
-    max-width: 50%;
+    ${tw`w-4/5 sm:w-1/2`}
     margin-bottom: 1em;
   }
 `;

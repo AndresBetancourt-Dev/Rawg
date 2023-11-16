@@ -27,7 +27,7 @@ const NewsPage: NextPage = () => {
           width={250}
           height={250}
         />
-        <NewsTitle>There's no news for the moment!</NewsTitle>
+        <NewsTitle>There&apos;s no news for the moment!</NewsTitle>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const GamePage: NextPage<GamePageProps> = ({ game }) => {
     return () => {
       cleanBackground?.();
     };
-  }, []);
+  }, [setBackground, cleanBackground, game.background_image]);
 
   return (
     <Fragment>
