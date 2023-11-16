@@ -25,6 +25,7 @@ export interface Game{
     id: number;
     metacritic: number;
     name: string;
+    description: string;
     parent_platforms: Platform[];
     platforms: PlatformDetailed[];
     playtime: number;

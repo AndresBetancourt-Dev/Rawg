@@ -1,15 +1,31 @@
-import type { NextPage } from 'next'
-import React from 'react'
-import SEO from '../../components/seo/SEO'
+import type { GetStaticPropsResult, NextPage } from "next";
+import React from "react";
+import SEO from "../../components/seo/SEO";
+import { Game } from "types/games/Game";
+import { Time } from "utilities/constants";
+import { getLatestGames } from "api/games";
+import LatestPageList from "components/latest/LatestPageList";
 
-const LatestPage: NextPage = () => {
-  return (
-    <div>
-      <SEO title='Latest' />
-      <div style={{width : "100%", height: "100vh"}} > LatestPage</div>
-      <div style={{width : "100%", height: "100vh"}} > LatestPage</div>
-    </div>
-  )
+interface LatestPageProps {
+  games: Game[];
 }
 
-export default LatestPage
+const LatestPage: NextPage<LatestPageProps> = ({ games }) => {
+  return (
+    <div>
+      <SEO title="Latest" />
+      <LatestPageList games={games} />
+    </div>
+  );
+};
+
+export async function getStaticProps() {
+  const games = await getLatestGames();
+  const props: GetStaticPropsResult<LatestPageProps> = {
+    props: { games },
+    revalidate: Time.HOUR,
+  };
+  return props;
+}
+
+export default LatestPage;

@@ -8,7 +8,8 @@ import { HeroStyles } from "./Hero.styles";
 export const HomeHero = styled.section`
    ${HeroStyles}
     &::before{
-      ${tw`w-full h-[100vh] content absolute top-0 left-0 opacity-50`}
+      ${tw`w-full h-[100vh] absolute top-0 left-0 opacity-50`}
+      content: "";
       background: purple;
       z-index: 2;
       animation: 10s background-neon ease-in-out infinite;

@@ -6,7 +6,9 @@ const NotFoundPage: NextPage = () => {
   return (
     <div>
       <SEO title="Not Found" />
-      Not found Page
+      <div className="w-full h-[100vh] flex items-center justify-center">
+        <h1 className="text-4xl">Not Found</h1>
+      </div>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
     <Container
       background_image={game.background_image}
       dominant_color={game.dominant_color}
-      href={`/${game.slug}`}
+      href={`/games/${game.slug}`}
     >
       <GameCardTitle>{game.name}</GameCardTitle>
       <GameCardContent>
